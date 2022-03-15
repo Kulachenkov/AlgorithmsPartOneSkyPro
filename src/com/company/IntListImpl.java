@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class IntListImpl implements IntList{
 
     private int size;
-    private final Integer [] myArrayList;
+    private Integer [] myArrayList;
     private final static int DEFAULT_CAPACITY = 10;
 
     public IntListImpl() {
@@ -24,10 +24,9 @@ public class IntListImpl implements IntList{
         return item;
     }
 
-    private void grow() {
-        double newLength = myArrayList.length * 1.5;
-        int newCapacity = (int)newLength;
-        Arrays.copyOf(myArrayList, newCapacity);
+    private Integer[] grow() {
+       int newCapacity = (int) (myArrayList.length * 1.5);
+        return Arrays.copyOf(myArrayList, newCapacity);
     }
 
     @Override
