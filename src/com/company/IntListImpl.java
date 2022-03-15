@@ -18,7 +18,7 @@ public class IntListImpl implements IntList{
             throw new IllegalArgumentException();
         }
         if (size == myArrayList.length) {
-            grow();
+            this.myArrayList = grow();
         }
         myArrayList[size++] = item;
         return item;
@@ -33,7 +33,7 @@ public class IntListImpl implements IntList{
     public Integer add(int index, Integer item) {
         indexItemCheck(index, item);
         if (size == myArrayList.length) {
-            grow();
+            this.myArrayList = grow();
         }
             System.arraycopy(myArrayList, index, myArrayList, index + 1, size - index);
         myArrayList[index] = item;
